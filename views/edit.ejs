@@ -1,0 +1,26 @@
+<%- include("header.ejs") %>
+<div class="wrapper">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h4 class="ask"> What's on your Mind?</h4>
+                <form action="/submit" method="POST">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" value="<%= post.name %>" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" value="<%= post.email %>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label"><i class="fas fa-comment"></i> Message</label>
+                        <textarea class="form-control" name="message" id="message" rows="5" placeholder="Enter your message" required><%= post.message %></textarea>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary button"><i class="fas fa-paper-plane"></i> Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("footer.ejs") %>
